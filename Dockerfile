@@ -50,7 +50,7 @@ RUN conda install --quiet --yes \
 
 RUN pip install azure-storage-blob
 
-COPY /pushkar.png /home/jovyan/pushkar.png
+COPY /pushkar.png "/home/jovyan/${NB_USER}/"pushkar.png
 
 # Install facets which does not have a pip or conda package at the moment
 WORKDIR /tmp
