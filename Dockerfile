@@ -50,8 +50,6 @@ RUN conda install --quiet --yes \
 
 RUN pip install azure-storage-blob
 
-COPY /pushkar.png "/home/jovyan/${NB_USER}/"pushkar.png
-
 # Install facets which does not have a pip or conda package at the moment
 WORKDIR /tmp
 RUN git clone https://github.com/PAIR-code/facets.git && \
@@ -67,5 +65,7 @@ RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
     fix-permissions "/home/${NB_USER}"
 
 USER ${NB_UID}
+
+COPY /pushkar.png ${HOME}
 
 WORKDIR "${HOME}"
