@@ -66,6 +66,6 @@ RUN MPLBACKEND=Agg python -c "import matplotlib.pyplot" && \
 
 USER ${NB_UID}
 
-COPY /pushkar.png ${HOME}
+COPY /pushkar.png /tmp/pushkar.png
 
 WORKDIR "${HOME}"
